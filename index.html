@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Daftar Mahasiswa</h2>
+<table border="1" cellpadding="8" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Nama</th>
+    <th>NIM</th>
+    <th>Jurusan</th>
+    <th>Aksi</th>
+  </tr>
+  {% for m in data %}
+  <tr>
+    <td>{{ m.id }}</td>
+    <td>{{ m.nama }}</td>
+    <td>{{ m.nim }}</td>
+    <td>{{ m.jurusan }}</td>
+    <td>
+      <a href="{{ url_for('edit', id=m.id) }}">Edit</a> |
+      <a
+        href="{{ url_for('delete', id=m.id) }}"
+        onclick="return confirm('Hapus data ini?')"
+        >Hapus</a
+      >
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
