@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Input Data Mahasiswa</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Input Data Mahasiswa</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">Beranda</a> |
+      <a href="{{ url_for('add') }}">Tambah Data</a>
+    </nav>
+    <hr />
+    {% block content %}{% endblock %}
+  </body>
+</html>
